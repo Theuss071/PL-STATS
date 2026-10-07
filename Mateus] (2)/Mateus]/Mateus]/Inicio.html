@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL STATS - Dashboard</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img class="logo_do_site" src="logo.png" alt="Logo"/>
+            <div class="logo-texto">
+                <div class="logo-titulo">
+                    <span class="texto-branco">PL</span>
+                    <span class="texto-roxo">STATS</span>
+                </div>
+                <span class="subtitulo-logo">PREMIER LEAGUE INFOS</span>
+            </div>
+        </div>
+        
+        <div class="menu-lateral">
+            <a href="Inicio.html" class="btn-menu ativo"><i class="fas fa-home"></i> INÍCIO</a>
+            <a href="Geral.html" class="btn-menu"><i class="fas fa-user"></i> GERAL</a>
+            <a href="Comparar.html" class="btn-menu"><i class="fas fa-balance-scale"></i> COMPARAR</a>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <section class="painel-principal">
+            <div class="boas-vindas">
+                <h1>BOAS VINDAS</h1>
+                <p>ACOMPANHE TUDO SOBRE A PREMIER LEAGUE !</p>
+            </div>
+
+<div style="background: #161622; border: 1px solid #2a2a40; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+        <h3 id="destaque-titulo" style="color: #7000ff; font-size: 14px; margin-top: 0;">DESTAQUE DA RODADA</h3>
+        <div style="display: flex; gap: 15px;">
+          <div style="flex: 1; background: #0d0d15; border: 1px solid #2a2a40; border-radius: 8px; padding: 15px;">
+            <small id="card1-sub" style="color: #aaa; font-size: 10px; display: block;">LÍDER</small>
+            <strong id="card1-nome" style="color: #fff; font-size: 16px; display: block; margin: 5px 0;">--</strong>
+            <span id="card1-info" style="color: #7000ff; font-size: 12px; font-weight: bold;">--</span>
+          </div>
+          <div style="flex: 1; background: #0d0d15; border: 1px solid #2a2a40; border-radius: 8px; padding: 15px;">
+            <small id="card2-sub" style="color: #aaa; font-size: 10px; display: block;">MELHOR DESEMPENHO  </small>
+            <strong id="card2-nome" style="color: #fff; font-size: 16px; display: block; margin: 5px 0;">--</strong>
+            <span id="card2-info" style="color: #00e676; font-size: 12px; font-weight: bold;">--</span>
+          </div>
+        </div>
+      </div>
+
+        <div class="artilharia-box">
+        <h2>ARTILHARIA DA PREMIER LEAGUE</h2>
+        <div id="container-artilharia" class="artilheiros-lista"></div>
+        </div>
+        </div>
+        </section>
+
+        <aside class="painel-tabela">
+            <div class="tabela-header">
+                <h2>Premier League</h2>
+                <span>38ª rodada</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Clube</th>
+                        <th>J</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>D</th>
+                        <th>SG</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                </tbody>
+            </table>
+        </aside>
+
+    </main>
+
+    <script src="app.js"></script>
+            
+
+</body>
+</html>

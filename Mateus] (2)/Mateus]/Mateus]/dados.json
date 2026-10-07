@@ -1,0 +1,39 @@
+{
+  "destaques": {
+    "lider": "Arsenal",
+    "liderInfo": "85 PTS | 26 VITÓRIAS",
+    "melhorAproveitamento": "Manchester City",
+    "melhorAproveitamentoInfo": "44 GOLS DE SALDO POSITIVO"
+  },
+  "artilharia": [
+    { "nome": "Erling Haaland", "gols": "27 GOLS", "foto": "haaland.png" },
+    { "nome": "Cole Palmer", "gols": "22 GOLS", "foto": "palmer.png" },
+    { "nome": "Alexander Isak", "gols": "21 GOLS", "foto": "isak.png" },
+    { "nome": "Ollie Watkins", "gols": "19 GOLS", "foto": "watkins.png" }
+  ],
+  "tabela": [
+    { "rank": 1, "name": "Arsenal", "played": 38, "w": 26, "l": 7, "d": 5, "goalsDiff": 44, "points": 85 },
+    { "rank": 2, "name": "Manchester City", "played": 38, "w": 23, "l": 9, "d": 6, "goalsDiff": 42, "points": 78 },
+    { "rank": 3, "name": "Manchester United", "played": 38, "w": 20, "l": 11, "d": 7, "goalsDiff": 19, "points": 71 },
+    { "rank": 4, "name": "Aston Villa", "played": 38, "w": 19, "l": 8, "d": 11, "goalsDiff": 7, "points": 65 },
+    { "rank": 5, "name": "Liverpool", "played": 38, "w": 17, "l": 9, "d": 12, "goalsDiff": 10, "points": 60 },
+    { "rank": 6, "name": "AFC Bournemouth", "played": 38, "w": 13, "l": 18, "d": 7, "goalsDiff": 4, "points": 57 },
+    { "rank": 7, "name": "Sunderland", "played": 38, "w": 14, "l": 12, "d": 12, "goalsDiff": -6, "points": 54 },
+    { "rank": 8, "name": "Brighton & Hove Albion", "played": 38, "w": 14, "l": 11, "d": 13, "goalsDiff": 6, "points": 53 },
+    { "rank": 9, "name": "Brentford", "played": 38, "w": 14, "l": 11, "d": 13, "goalsDiff": 3, "points": 53 },
+    { "rank": 10, "name": "Chelsea", "played": 38, "w": 14, "l": 10, "d": 14, "goalsDiff": 6, "points": 52 },
+    { "rank": 11, "name": "Fulham", "played": 38, "w": 15, "l": 7, "d": 16, "goalsDiff": -4, "points": 52 },
+    { "rank": 12, "name": "Newcastle United", "played": 38, "w": 14, "l": 7, "d": 17, "goalsDiff": -2, "points": 49 },
+    { "rank": 13, "name": "Everton", "played": 38, "w": 13, "l": 10, "d": 15, "goalsDiff": -3, "points": 49 },
+    { "rank": 14, "name": "Leeds United", "played": 38, "w": 11, "l": 14, "d": 13, "goalsDiff": -7, "points": 47 },
+    { "rank": 15, "name": "Crystal Palace", "played": 38, "w": 11, "l": 12, "d": 15, "goalsDiff": -10, "points": 45 },
+    { "rank": 16, "name": "Nottingham Forest", "played": 38, "w": 11, "l": 11, "d": 16, "goalsDiff": -3, "points": 44 },
+    { "rank": 17, "name": "Tottenham Hotspur", "played": 38, "w": 10, "l": 11, "d": 17, "goalsDiff": -9, "points": 41 },
+    { "rank": 18, "name": "West Ham United", "played": 38, "w": 10, "l": 9, "d": 19, "goalsDiff": -19, "points": 39 },
+    { "rank": 19, "name": "Burnley", "played": 38, "w": 4, "l": 10, "d": 24, "goalsDiff": -37, "points": 22 },
+    { "rank": 20, "name": "Wolverhampton Wanderers", "played": 38, "w": 3, "l": 11, "d": 24, "goalsDiff": -41, "points": 20 }
+  ] 
+
+    
+  
+}
