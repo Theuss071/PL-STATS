@@ -36,7 +36,7 @@
     { "rank": 20, "name": "Wolverhampton Wanderers", "played": 38, "w": 3, "l": 11, "d": 24, "goalsDiff": -41, "points": 20 }
   ],
 
-  "jogadores": {
+ "jogadores": {
     "salah": {
       "name": "Mohamed Salah", "team": "Liverpool", "foto": "salah.png",
       "posicao": "Ponta direita", "idade": 32, "pais": "Egito",
@@ -54,6 +54,79 @@
       "posicao": "Centroavante", "idade": 25, "pais": "Noruega",
       "games": 36, "minutes": 3050, "goals": 27, "assists": 8,
       "shots": 102, "keyPasses": 22, "dribbles": 0.8, "passAcc": 76
+    },
+    "bruno": {
+      "name": "Bruno Fernandes", "team": "Manchester United", "foto": "bruno.png",
+      "posicao": "Meia", "idade": 30, "pais": "Portugal",
+      "games": 35, "minutes": 3100, "goals": 10, "assists": 21,
+      "shots": 88, "keyPasses": 136, "dribbles": 1.4, "passAcc": 83
+    },
+    "thiago": {
+      "name": "Igor Thiago", "team": "Brentford", "foto": "thiago.png",
+      "posicao": "Centroavante", "idade": 23, "pais": "Brasil",
+      "games": 32, "minutes": 2500, "goals": 22, "assists": 4,
+      "shots": 67, "keyPasses": 15, "dribbles": 0.9, "passAcc": 72
+    },
+    "palmer": {
+      "name": "Cole Palmer", "team": "Chelsea", "foto": "palmer.png",
+      "posicao": "Meia", "idade": 22, "pais": "Inglaterra",
+      "games": 33, "minutes": 2820, "goals": 22, "assists": 11,
+      "shots": 90, "keyPasses": 72, "dribbles": 1.8, "passAcc": 84
+    },
+    "doku": {
+      "name": "Jérémy Doku", "team": "Manchester City", "foto": "doku.png",
+      "posicao": "Ponta esquerda", "idade": 22, "pais": "Bélgica",
+      "games": 29, "minutes": 1980, "goals": 6, "assists": 8,
+      "shots": 45, "keyPasses": 52, "dribbles": 3.8, "passAcc": 86
+    },
+    "cherki": {
+      "name": "Rayan Cherki", "team": "Manchester City", "foto": "cherki.png",
+      "posicao": "Meia", "idade": 21, "pais": "França",
+      "games": 28, "minutes": 1850, "goals": 8, "assists": 12,
+      "shots": 42, "keyPasses": 58, "dribbles": 2.9, "passAcc": 85
+    },
+    "watkins": {
+      "name": "Ollie Watkins", "team": "Aston Villa", "foto": "watkins.png",
+      "posicao": "Centroavante", "idade": 28, "pais": "Inglaterra",
+      "games": 37, "minutes": 3150, "goals": 19, "assists": 13,
+      "shots": 85, "keyPasses": 45, "dribbles": 1.1, "passAcc": 75
+    },
+    "semenyo": {
+      "name": "Antoine Semenyo", "team": "Bournemouth", "foto": "semenyo.png",
+      "posicao": "Atacante", "idade": 24, "pais": "Gana",
+      "games": 33, "minutes": 2700, "goals": 17, "assists": 6,
+      "shots": 60, "keyPasses": 31, "dribbles": 1.5, "passAcc": 77
+    },
+    
+    "szoboszlai": {
+      "name": "Dominik Szoboszlai", "team": "Liverpool", "foto": "szoboszlai.png",
+      "posicao": "Meia", "idade": 23, "pais": "Hungria",
+      "games": 33, "minutes": 2750, "goals": 7, "assists": 8,
+      "shots": 54, "keyPasses": 78, "dribles": 1.2, "passAcc": 85
+    },
+    "garner": {
+      "name": "James Garner", "team": "Everton", "foto": "garner.png",
+      "posicao": "Volante", "idade": 23, "pais": "Inglaterra",
+      "games": 34, "minutes": 2980, "goals": 3, "assists": 4,
+      "shots": 28, "keyPasses": 35, "dribles": 0.8, "passAcc": 82
+    },
+    "palhinha": {
+      "name": "João Palhinha", "team": "Tottenham", "foto": "palhinha.png",
+      "posicao": "Volante", "idade": 29, "pais": "Portugal",
+      "games": 31, "minutes": 2600, "goals": 2, "assists": 1,
+      "shots": 20, "keyPasses": 18, "dribles": 0.5, "passAcc": 84
+    },
+    "joaogomes": {
+      "name": "João Gomes", "team": "Wolverhampton", "foto": "joao-gomes.png",
+      "posicao": "Volante", "idade": 23, "pais": "Brasil",
+      "games": 32, "minutes": 2700, "goals": 4, "assists": 2,
+      "shots": 25, "keyPasses": 22, "dribles": 1.1, "passAcc": 81
+    },
+    "calvertlewin": {
+      "name": "Dominic Calvert-Lewin", "team": "Leeds United", "foto": "calvert-lewin.png",
+      "posicao": "Centroavante", "idade": 27, "pais": "Inglaterra",
+      "games": 30, "minutes": 2300, "goals": 14, "assists": 3,
+      "shots": 66, "keyPasses": 19, "dribles": 0.6, "passAcc": 68
     }
   },
 

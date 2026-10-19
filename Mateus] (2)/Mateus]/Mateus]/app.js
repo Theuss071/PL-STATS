@@ -74,7 +74,7 @@ function buscarJogadorAPI() {
     : "<p style='color: #ff3b30; font-size: 12px;'>Não encontrado!</p>";
 }
 
-// 4. Comparação
+
 function selecionar(k) {
   const p = DADOS.jogadores[k];
   if (cardAtivo === 1) j1 = p; else j2 = p;
