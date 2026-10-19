@@ -1,14 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL STATS - Comparação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="comparar.css"/>
 </head>
 <body>
-    <h1 class="titulo">Comparar</h1>
-    <h2 class="descrisão">Bem vindo ao inicio das comparações</h2>
-    
+
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img class="logo_do_site" src="logo.png" alt="Logo"/>
+            <div class="logo-texto">
+                <div class="logo-titulo">
+                    <span class="texto-branco">PL</span>
+                    <span class="texto-roxo">STATS</span>
+                </div>
+                <span class="subtitulo-logo">PREMIER LEAGUE INFOS</span>
+            </div>
+        </div>
+
+        <div class="menu-lateral">
+            <a href="Inicio.html" class="btn-menu"><i class="fas fa-home"></i> INÍCIO</a>
+            <a href="Geral.html" class="btn-menu"><i class="fas fa-user"></i> GERAL</a>
+            <a href="Comparar.html" class="btn-menu ativo"><i class="fas fa-balance-scale"></i> COMPARAR</a>
+        </div>
+    </header>
+
+    <main class="comparar-container">
+
+        <h1 class="comparar-titulo">Comparação de Jogadores</h1>
+
+        <section class="comparar-topo">
+            <button type="button" class="slot j1" id="j1-card" onclick="abrirModal(1)">
+                <div class="slot-vazio">
+                    <i class="fas fa-plus"></i>
+                    <span>JOGADOR 1</span>
+                    <small>Clique para adicionar</small>
+                </div>
+            </button>
+
+            <span class="vs">VS</span>
+
+            <button type="button" class="slot j2" id="j2-card" onclick="abrirModal(2)">
+                <div class="slot-vazio">
+                    <i class="fas fa-plus"></i>
+                    <span>JOGADOR 2</span>
+                    <small>Clique para adicionar</small>
+                </div>
+            </button>
+        </section>
+
+        <section class="comparar-baixo">
+            <div class="box">
+                <h3>RADAR</h3>
+                <div id="radar" class="radar-vazio">Escolha os 2 jogadores para ver o gráfico.</div>
+                <div class="legenda" id="legenda"></div>
+            </div>
+
+            <div class="box">
+                <h3>ESTATÍSTICAS DETALHADAS</h3>
+                <div id="tabela-detalhes" class="radar-vazio">Aguardando jogadores...</div>
+            </div>
+
+            <div class="box">
+                <h3>RESULTADO FINAL</h3>
+                <div id="resultado" class="radar-vazio">Aguardando jogadores...</div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modal-pesquisa" class="modal" onclick="if(event.target===this) fecharModal()">
+        <div class="modal-conteudo">
+            <h3 id="modal-titulo">Escolher jogador</h3>
+            <input id="input-busca-jogador" type="text" placeholder="Digite o nome ou o time..." oninput="buscar()">
+            <div id="resultado-busca"></div>
+            <button type="button" class="modal-fechar" onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="comparar.js"></script>
 </body>
 </html>

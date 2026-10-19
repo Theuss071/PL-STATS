@@ -1,0 +1,42 @@
+.geral-container { display: flex; flex-direction: column; gap: 22px; }
+.geral-topo h1 { font-size: 22px; margin-bottom: 4px; }
+.geral-topo p { font-size: 12px; color: #888; }
+.secao-titulo { font-size: 16px; margin-bottom: 12px; }
+
+.totais { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.lideres-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+.total-card, .lider-card { background: #161622; border: 1px solid #2a2a40; border-radius: 12px; padding: 16px; }
+
+.total-card { display: flex; align-items: center; gap: 14px; }
+.total-icone { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 50%; background: #2a1a55; color: #a259ff; font-size: 20px; }
+.total-rotulo { font-size: 10px; color: #888; letter-spacing: 1px; }
+.total-valor { font-size: 26px; font-weight: bold; line-height: 1.2; }
+.total-sub { font-size: 11px; color: #a259ff; }
+
+.lider-titulo { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 14px; }
+.lider-titulo i { color: #7000ff; }
+.lider-lista { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.lider-item { display: flex; align-items: center; gap: 10px; padding: 8px; background: #0d0d15; border-radius: 8px; }
+.lider-item.primeiro { border: 1px solid #7000ff; }
+.lider-pos { width: 18px; text-align: center; font-size: 13px; font-weight: bold; color: #7000ff; }
+
+.lider-foto { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; background: #1a1a2e; flex-shrink: 0; }
+.primeiro .lider-foto { width: 46px; height: 46px; }
+
+.lider-nome { flex: 1; min-width: 0; }
+.lider-nome strong { display: block; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lider-nome small { font-size: 10px; color: #888; }
+
+.lider-valor { font-size: 16px; font-weight: bold; }
+.primeiro .lider-valor { font-size: 20px; color: #a259ff; }
+
+.msg-erro { color: #ff3b30; font-size: 13px; }
+
+@media (max-width: 1000px) {
+    .totais, .lideres-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .totais, .lideres-grid { grid-template-columns: 1fr; }
+}

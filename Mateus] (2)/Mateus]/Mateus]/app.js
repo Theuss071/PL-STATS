@@ -1,12 +1,9 @@
 let DADOS = {}, j1 = null, j2 = null, cardAtivo = 1;
-
-// 1. Carrega dados do JSON e preenche a tela
 fetch('dados.json')
   .then(r => r.json())
   .then(data => {
     DADOS = data;
 
-    // Tabela Lateral
     const corpo = document.getElementById("corpo-tabela");
     if (corpo && data.tabela) {
       corpo.innerHTML = data.tabela.map(i => `
@@ -23,7 +20,7 @@ fetch('dados.json')
       `).join('');
     }
 
-    // Destaques
+  
     if (data.destaques) {
       document.getElementById("card1-nome").innerText = data.destaques.lider || "";
       document.getElementById("card1-info").innerText = data.destaques.liderInfo || "";
@@ -31,7 +28,7 @@ fetch('dados.json')
       document.getElementById("card2-info").innerText = data.destaques.melhorAproveitamentoInfo || "";
     }
 
-    // Artilharia
+  
     const artBox = document.getElementById("container-artilharia");
     if (artBox && data.artilharia) {
       artBox.innerHTML = data.artilharia.map((a, idx) => `
@@ -45,7 +42,7 @@ fetch('dados.json')
     }
   });
   
-// 2. Navegação de Abas
+
 function navegarPara(aba) {
   document.getElementById("aba-inicio").style.display = aba === 'inicio' ? 'block' : 'none';
   document.getElementById("aba-comparar").style.display = aba === 'comparar' ? 'block' : 'none';
@@ -53,7 +50,7 @@ function navegarPara(aba) {
   document.getElementById("btn-comparar")?.classList.toggle("ativo", aba === 'comparar');
 }
 
-// 3. Modal de Pesquisa
+
 function abrirModal(card) {
   cardAtivo = card;
   document.getElementById("modal-pesquisa").style.display = "flex";

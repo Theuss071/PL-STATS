@@ -1,14 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL STATS - Estatísticas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="geral.css"/>
 </head>
 <body>
-    <h1 class="titulo">Geral</h1>
-    <h2 class="descrisão">Bem vindo ao inicio das informações gerais onde voçê encontrara os principais lideres da PREMIER LEAGUE</h2>
-    
+
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img class="logo_do_site" src="logo.png" alt="Logo"/>
+            <div class="logo-texto">
+                <div class="logo-titulo">
+                    <span class="texto-branco">PL</span>
+                    <span class="texto-roxo">STATS</span>
+                </div>
+                <span class="subtitulo-logo">PREMIER LEAGUE INFOS</span>
+            </div>
+        </div>
+
+        <div class="menu-lateral">
+            <a href="Inicio.html" class="btn-menu"><i class="fas fa-home"></i> INÍCIO</a>
+            <a href="Geral.html" class="btn-menu ativo"><i class="fas fa-user"></i> GERAL</a>
+            <a href="Comparar.html" class="btn-menu"><i class="fas fa-balance-scale"></i> COMPARAR</a>
+        </div>
+    </header>
+
+    <main class="geral-container">
+        <section class="geral-topo">
+            <h1>Estatísticas</h1>
+            <p>Acompanhe os números da temporada 25/26 da Premier League.</p>
+        </section>
+
+        <section id="totais" class="totais"></section>
+
+        <section>
+            <h2 class="secao-titulo">Líderes da temporada</h2>
+            <div id="lideres-grid" class="lideres-grid"></div>
+        </section>
+    </main>
+
+    <script src="geral.js"></script>
 </body>
 </html>
