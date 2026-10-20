@@ -30,4 +30,3 @@ fetch("dados.json")
         </ol>
       </article>`).join("");
   })
-  .catch(() => erro("Não foi possível carregar os dados. Abra o site com o Live Server."));

@@ -1,8 +1,6 @@
-let DADOS = {}, j1 = null, j2 = null, cardAtivo = 1;
 fetch('dados.json')
   .then(r => r.json())
   .then(data => {
-    DADOS = data;
 
     const corpo = document.getElementById("corpo-tabela");
     if (corpo && data.tabela) {
@@ -20,7 +18,6 @@ fetch('dados.json')
       `).join('');
     }
 
-  
     if (data.destaques) {
       document.getElementById("card1-nome").innerText = data.destaques.lider || "";
       document.getElementById("card1-info").innerText = data.destaques.liderInfo || "";
@@ -28,7 +25,6 @@ fetch('dados.json')
       document.getElementById("card2-info").innerText = data.destaques.melhorAproveitamentoInfo || "";
     }
 
-  
     const artBox = document.getElementById("container-artilharia");
     if (artBox && data.artilharia) {
       artBox.innerHTML = data.artilharia.map((a, idx) => `
@@ -40,65 +36,4 @@ fetch('dados.json')
         </div>
       `).join('');
     }
-  });
-  
-
-function navegarPara(aba) {
-  document.getElementById("aba-inicio").style.display = aba === 'inicio' ? 'block' : 'none';
-  document.getElementById("aba-comparar").style.display = aba === 'comparar' ? 'block' : 'none';
-  document.getElementById("btn-inicio")?.classList.toggle("ativo", aba === 'inicio');
-  document.getElementById("btn-comparar")?.classList.toggle("ativo", aba === 'comparar');
-}
-
-
-function abrirModal(card) {
-  cardAtivo = card;
-  document.getElementById("modal-pesquisa").style.display = "flex";
-  document.getElementById("resultado-busca").innerHTML = "";
-  document.getElementById("input-busca-jogador").value = "";
-}
-
-function fecharModal() {
-  document.getElementById("modal-pesquisa").style.display = "none";
-}
-
-function buscarJogadorAPI() {
-  const t = document.getElementById("input-busca-jogador").value.toLowerCase().trim();
-  const k = Object.keys(DADOS.jogadores || {}).find(key => 
-    key.includes(t) || DADOS.jogadores[key].name.toLowerCase().includes(t)
-  );
-  const p = DADOS.jogadores?.[k];
-
-  document.getElementById("resultado-busca").innerHTML = p 
-    ? `<div onclick="selecionar('${k}')" style="padding: 8px; background: #1a1a2e; color: #fff; cursor: pointer; border-radius: 6px; margin-top: 5px;">${p.name} (${p.team})</div>`
-    : "<p style='color: #ff3b30; font-size: 12px;'>Não encontrado!</p>";
-}
-
-
-function selecionar(k) {
-  const p = DADOS.jogadores[k];
-  if (cardAtivo === 1) j1 = p; else j2 = p;
-  document.getElementById(`j${cardAtivo}-nome-card`).innerText = `${p.name} (${p.team})`;
-  fecharModal();
-  if (j1 && j2) renderizarComparacaoDetalhada();
-}
-
-function renderizarComparacaoDetalhada() {
-  const vence = (j1.score || 0) >= (j2.score || 0) ? j1 : j2;
-
-  document.getElementById("tabela-estatisticas-detalhadas").innerHTML = `
-    <table style="width: 100%; color: #fff; font-size: 12px; text-align: left; border-collapse: collapse; margin-bottom: 15px;">
-      <tr style="border-bottom: 1px solid #2a2a40; color: #888;">
-        <th>Métrica</th><th>${j1.name}</th><th>${j2.name}</th>
-      </tr>
-      <tr><td>Jogos</td><td>${j1.games}</td><td>${j2.games}</td></tr>
-      <tr><td>Gols</td><td>${j1.goals}</td><td>${j2.goals}</td></tr>
-      <tr><td>Assistências</td><td>${j1.assists}</td><td>${j2.assists}</td></tr>
-      <tr><td>Finalizações</td><td>${j1.shots}</td><td>${j2.shots}</td></tr>
-      <tr><td>Precisão Passe</td><td>${j1.passAcc}</td><td>${j2.passAcc}</td></tr>
-    </table>
-    <div style="padding: 10px; background: #1a1a2e; border-radius: 6px; color: #fff;">
-      Melhor desempenho: <strong style="color: #7000ff;">${vence.name}</strong> (${vence.score}%).
-    </div>
-  `;
-}
+  }); 

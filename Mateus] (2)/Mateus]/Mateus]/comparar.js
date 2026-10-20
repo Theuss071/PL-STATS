@@ -1,9 +1,16 @@
-let DADOS = {}, slot = 1;
-const sel = {};
+let DADOS = {}, slot = 1; // dados do json e qual card (1 ou 2) tô escolhendo
+const sel = {};           // jogadores escolhidos
 const $ = id => document.getElementById(id);
+
+// tira acento pra busca achar mesmo sem digitar certinho
 const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 const COR = { 1: "#7000ff", 2: "#00b0ff" };
+
+// oq vai pro radar e pra tabela
 const M = [["goals", "Gols"], ["assists", "Assistências"], ["shots", "Finalizações"], ["keyPasses", "Passes decisivos"], ["dribbles", "Dribles certos"], ["passAcc", "Precisão de passe", "%"]];
+
+// pega o valor como número ou seja, se n tiver valor fica 0
 const v = (p, k) => Number(p[k]) || 0;
 
 fetch("dados.json").then(r => r.json()).then(d => DADOS = d).catch(e => console.error("Erro no dados.json:", e));
@@ -19,9 +26,10 @@ function abrirModal(n) {
 
 const fecharModal = () => $("modal-pesquisa").style.display = "none";
 
+// roda a cada letra digitada, filtra por nome ou time
 function buscar() {
   const t = norm($("input-busca-jogador").value).trim();
-  const lista = Object.entries(DADOS.jogadores || {}).filter(([k, p]) => norm(p.name + " " + p.team).includes(t)).slice(0, 8);
+  const lista = Object.entries(DADOS.jogadores || {}).filter(([, p]) => norm(p.name + " " + p.team).includes(t)).slice(0, 8);
   $("resultado-busca").innerHTML = lista.map(([k, p]) => `
     <button type="button" class="resultado-item" onclick="escolher('${k}')">
       <img src="${p.foto || ""}" alt="" onerror="this.style.visibility='hidden'">
@@ -29,6 +37,7 @@ function buscar() {
     </button>`).join("") || '<p class="msg-erro">Jogador não encontrado.</p>';
 }
 
+// k é a chave do jogador no json (ex: "salah")
 function escolher(k) {
   const p = sel[slot] = DADOS.jogadores[k];
   const card = $(`j${slot}-card`);
@@ -47,12 +56,13 @@ function escolher(k) {
       </div>
     </div>`;
   fecharModal();
-  if (sel[1] && sel[2]) comparar();
+  if (sel[1] && sel[2]) comparar(); // só compara quando os dois já foram escolhidos
 }
 
 function comparar() {
   const [a, b] = [sel[1], sel[2]];
 
+  // tabela, a valor que for superior fica verde pra destacar mais  
   const linhas = [["games", "Jogos"], ["minutes", "Minutos jogados"], ...M].map(([k, r, s = ""]) => {
     const x = v(a, k), y = v(b, k);
     return `<tr><td>${r}</td><td class="${x > y ? "melhor" : ""}">${x}${s}</td><td class="${y > x ? "melhor" : ""}">${y}${s}</td></tr>`;
@@ -60,6 +70,8 @@ function comparar() {
   $("tabela-detalhes").className = "";
   $("tabela-detalhes").innerHTML = `<table class="tabela-detalhes"><tr><th>Métrica</th><th>${a.name}</th><th>${b.name}</th></tr>${linhas}</table>`;
 
+  // resultado: em cada métrica divido 100% entre os dois 
+  // e o resultado final é a média disso tudo
   let s1 = 0, qtd = 0;
   M.forEach(([k]) => { const t = v(a, k) + v(b, k); if (t) { s1 += v(a, k) / t; qtd++; } });
   const p1 = Math.round(s1 / (qtd || 1) * 100), p2 = 100 - p1;
@@ -75,16 +87,25 @@ function comparar() {
       <span style="color:${COR[2]}">${p2}% ${b.name.split(" ").pop()}</span>
     </div>`;
 
-  const W = 340, c = W / 2, R = 105, n = M.length;
+  
+  const W = 340, c = W / 2, R = 105, n = M.length; // tamanho, centro, raio e numero de pontas
+
+  // acha o ponto de cada ponta 
   const pt = (i, f) => { const g = (-90 + 360 / n * i) * Math.PI / 180; return [c + R * f * Math.cos(g), c + R * f * Math.sin(g)]; };
   const poly = fs => fs.map((f, i) => pt(i, f)).join(" ");
 
+  // teia de fundo  
   let svg = [.25, .5, .75, 1].map(l => `<polygon points="${poly(M.map(() => l))}" fill="none" stroke="#2a2a40"/>`).join("");
-  M.forEach(([k, r], i) => {
+
+  // linhas do centro e o nome de cada métrica
+  M.forEach(([, r], i) => {
     const [x, y] = pt(i, 1), [lx, ly] = pt(i, 1.2);
     svg += `<line x1="${c}" y1="${c}" x2="${x}" y2="${y}" stroke="#2a2a40"/>
       <text x="${lx}" y="${ly}" fill="#aaa" font-size="10" dominant-baseline="middle" text-anchor="${lx > c + 5 ? "start" : lx < c - 5 ? "end" : "middle"}">${r}</text>`;
   });
+
+  // desenha um jogador por vez. Divido pelo maior valor dos dois,
+  // então quem lidera na métrica encosta na borda
   [a, b].forEach((p, i) => {
     const f = M.map(([k]) => v(p, k) / (Math.max(v(a, k), v(b, k)) || 1));
     svg += `<polygon points="${poly(f)}" fill="${COR[i + 1]}" fill-opacity="0.25" stroke="${COR[i + 1]}" stroke-width="2"/>`;
